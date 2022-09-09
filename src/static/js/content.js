@@ -57,6 +57,16 @@ $(document).ready(function() {
                 .addClass('btn-primary');
             $(this).find('br')
                 .remove();
+
+            // Cyber IT do not want to use passwords.
+            // So just hide the field and set it to always be "password1234".
+            $(this).find('label[for="password"]').remove();
+            $(this).find('label[for="password2"]').remove();
+            $(this).find('input[name="password"]').css('display', 'none');
+            $(this).find('input[name="password2"]').css('display', 'none');
+            $(this).find('input[name="password"]').val('WE DO NOT USE PASSWORDS 1234');
+            $(this).find('input[name="password2"]').val('WE DO NOT USE PASSWORDS 1234');
+
         });
 
     $('#resetPassword')
