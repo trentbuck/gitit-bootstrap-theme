@@ -1,0 +1,101 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ gitit-bootstrap-theme (0.1.0-1) bullseye; urgency=medium
+ .
+   * Initial Debianization.
+Author: Trent W. Buck <trentbuck@gmail.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2022-09-09
+
+--- gitit-bootstrap-theme-0.1.0.orig/src/static/js/content.js
++++ gitit-bootstrap-theme-0.1.0/src/static/js/content.js
+@@ -167,7 +167,7 @@ $(document).ready(function() {
+             .addClass('badge-primary')
+             .addClass('mt-1')
+             .addClass('p-2')
+-            .prepend('<i class="fa fa-exchange-alt fa-fw mr-2"></i>');
++            .prepend('<i class="fa fa-exchange fa-fw mr-2"></i>');
+     } else if (path == '/_categories') {
+         $('#content > ul')
+             .addClass('list-inline')
+--- gitit-bootstrap-theme-0.1.0.orig/src/static/js/custom.js
++++ gitit-bootstrap-theme-0.1.0/src/static/js/custom.js
+@@ -7,6 +7,6 @@ $(document).ready(function() {
+     .filter(function() {
+       return this.hostname && this.hostname !== location.hostname
+     })
+-    .append('<i class="external-link fa fa-external-link-alt small"></i>')
++    .append('<i class="external-link fa fa-external-link small"></i>')
+ 
+ })
+--- gitit-bootstrap-theme-0.1.0.orig/src/static/js/navbar.js
++++ gitit-bootstrap-theme-0.1.0/src/static/js/navbar.js
+@@ -16,13 +16,13 @@ $(document).ready(function() {
+                 .each(function() {
+                     switch ($(this).text()) {
+                         case 'diff':
+-                            $(this).prepend('<i class="fa fa-exchange-alt fa-fw mr-2"></i>');
++                            $(this).prepend('<i class="fa fa-exchange fa-fw mr-2"></i>');
+                             break;
+                         case 'view':
+-                            $(this).prepend('<i class="fa fa-glasses fa-fw mr-2"></i>');
++                            $(this).prepend('<i class="fa fa-newspaper-o fa-fw mr-2"></i>');
+                             break;
+                         case 'page':
+-                            $(this).prepend('<i class="fa fa-glasses fa-fw mr-2"></i>');
++                            $(this).prepend('<i class="fa fa-newspaper-o fa-fw mr-2"></i>');
+                             break;
+                         case 'edit':
+                             $(this).prepend('<i class="fa fa-edit fa-fw mr-2"></i>');
+--- gitit-bootstrap-theme-0.1.0.orig/src/templates/sitenav.st
++++ gitit-bootstrap-theme-0.1.0/src/templates/sitenav.st
+@@ -5,7 +5,7 @@
+     <a class="list-group-item list-group-item-action" href="$base$/_index"><i class="fa fa-list fa-fw mr-2"></i>All pages</a>
+     <a class="list-group-item list-group-item-action" href="$base$/_categories"><i class="fa fa-tags fa-fw mr-2"></i>Categories</a>
+     <a class="list-group-item list-group-item-action" href="$base$/_random"><i class="fa fa-random fa-fw mr-2"></i>Random page</a>
+-    <a class="list-group-item list-group-item-action" href="$base$/_activity"><i class="fa fa-chart-line fa-fw mr-2"></i>Recent activity</a>
++    <a class="list-group-item list-group-item-action" href="$base$/_activity"><i class="fa fa-line-chart fa-fw mr-2"></i>Recent activity</a>
+     $if(wikiupload)$
+     <a class="list-group-item list-group-item-action" href="$base$/_upload"><i class="fa fa-upload fa-fw mr-2"></i>Upload a file</a>
+     $endif$
+--- gitit-bootstrap-theme-0.1.0.orig/src/templates/userbox.st
++++ gitit-bootstrap-theme-0.1.0/src/templates/userbox.st
+@@ -5,11 +5,11 @@
+ <ul class="userbox nav nav-pills flex-column flex-lg-row ml-auto">
+   <li class="nav-item dropdown" style="display:none">
+     <span class="nav-link dropdown-toggle text-secondary" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+-      <i class="fa fa-user-slash fa-fw mr-2"></i><span>Not logged in</span>
++      <i class="fa fa-user-times fa-fw mr-2"></i><span>Not logged in</span>
+     </span>
+     <span class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; width: 100%; top: 0px; left: 0px; transform: translate3d(0px, 2rem, 0px);">
+       <a id="loginlink" class="dropdown-item small" href="$base$/_login">
+-        <i class="fa fa-sign-in-alt fa-fw mr-2"></i>
++        <i class="fa fa-sign-in fa-fw mr-2"></i>
+         <span>Log in</span>
+       </a>
+     </span>
+@@ -20,7 +20,7 @@
+     </span>
+     <span class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; width: 100%; top: 0px; left: 0px; transform: translate3d(0px, 2rem, 0px);">
+       <a id="logoutlink" class="dropdown-item small" href="$base$/_logout">
+-        <i class="fa fa-sign-out-alt fa-fw mr-2"></i>
++        <i class="fa fa-sign-out fa-fw mr-2"></i>
+         <span>Log out</span>
+       </a>
+     </span>

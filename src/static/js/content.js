@@ -167,7 +167,7 @@ $(document).ready(function() {
             .addClass('badge-primary')
             .addClass('mt-1')
             .addClass('p-2')
-            .prepend('<i class="fa fa-exchange-alt fa-fw mr-2"></i>');
+            .prepend('<i class="fa fa-exchange fa-fw mr-2"></i>');
     } else if (path == '/_categories') {
         $('#content > ul')
             .addClass('list-inline')

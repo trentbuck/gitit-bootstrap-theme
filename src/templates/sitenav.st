@@ -5,7 +5,7 @@
     <a class="list-group-item list-group-item-action" href="$base$/_index"><i class="fa fa-list fa-fw mr-2"></i>All pages</a>
     <a class="list-group-item list-group-item-action" href="$base$/_categories"><i class="fa fa-tags fa-fw mr-2"></i>Categories</a>
     <a class="list-group-item list-group-item-action" href="$base$/_random"><i class="fa fa-random fa-fw mr-2"></i>Random page</a>
-    <a class="list-group-item list-group-item-action" href="$base$/_activity"><i class="fa fa-chart-line fa-fw mr-2"></i>Recent activity</a>
+    <a class="list-group-item list-group-item-action" href="$base$/_activity"><i class="fa fa-line-chart fa-fw mr-2"></i>Recent activity</a>
     $if(wikiupload)$
     <a class="list-group-item list-group-item-action" href="$base$/_upload"><i class="fa fa-upload fa-fw mr-2"></i>Upload a file</a>
     $endif$

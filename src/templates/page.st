@@ -13,8 +13,8 @@
     <link href="$base$/css/print.css" rel="stylesheet" media="all" type= "text/css" />
     $else$
     <link href="$base$/bootstrap4/css/bootstrap.min.css" rel="stylesheet" media="screen, projection" type="text/css" />
-    <link href="$base$/fonts-font-awesome/css/font-awesome.css" rel="stylesheet" media="screen, projection" type="text/css" />
-    <link href="$base$/fonts-font-awesome/css/solid.css" rel="stylesheet" media="screen, projection" type="text/css" />  <!-- FIXME -->
+    <link href="$base$/fonts-fork-awesome/css/fork-awesome.css" rel="stylesheet" media="screen, projection" type="text/css" />
+    <link href="$base$/fonts-fork-awesome/css/v5-compat.css" rel="stylesheet" media="screen, projection" type="text/css" />
     <link href="$base$/css/custom.css" rel="stylesheet" media="screen, projection" type="text/css" />
     <link href="$base$/css/print.css" rel="stylesheet" media="print" type= "text/css" />
     <script type="text/javascript" src="$base$/jquery/jquery.min.js"></script>
