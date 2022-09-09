@@ -1,0 +1,26 @@
+Source: gitit-bootstrap-theme
+Section: web
+Priority: optional
+Homepage: https://github.com/t13a/gitit-bootstrap-theme
+Standards-Version: 4.5.1
+Maintainer: Trent W. Buck <trentbuck@gmail.com>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+
+Package: gitit-bootstrap-theme
+Enhances:
+ gitit,
+Recommends:
+ gitit,
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libjs-jquery (>= 3.3.1),
+ libjs-jquery-ui (>= 1.12.1),
+ libjs-bootstrap4 (>= 4.1.1),
+# Ruh Roh -- Debian does not have 5.1 only 5.0-really-4.7 !
+ fonts-font-awesome (>= 5.1.0) | fonts-font-awesome,
+Architecture: all
+Description: FIXME
+ FIXME

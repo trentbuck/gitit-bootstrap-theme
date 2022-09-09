@@ -1,0 +1,5 @@
+# https://manpages.debian.org/bullseye-backports/devscripts/uscan.1.en.html#github.com
+version=4
+opts="filenamemangle=s%(?:.*?)?v?(\d[\d.]*@ARCHIVE_EXT@)%@PACKAGE@-$1%" \
+  https://github.com/t13a/@PACKAGE@/tags \
+  (?:.*?/)?v?@ANY_VERSION@@ARCHIVE_EXT@

@@ -1,0 +1,5 @@
+gitit-bootstrap-theme (0.1.0-1) bullseye; urgency=medium
+
+  * Initial Debianization.
+
+ -- Trent W. Buck <trentbuck@gmail.com>  Fri, 09 Sep 2022 17:33:11 +1000
