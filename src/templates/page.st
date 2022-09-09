@@ -12,14 +12,14 @@
     $if(printable)$
     <link href="$base$/css/print.css" rel="stylesheet" media="all" type= "text/css" />
     $else$
-    <link href="$base$/css/bootstrap.min.css" rel="stylesheet" media="screen, projection" type="text/css" />
-    <link href="$base$/css/fontawesome.css" rel="stylesheet" media="screen, projection" type="text/css" />
-    <link href="$base$/css/solid.css" rel="stylesheet" media="screen, projection" type="text/css" />
+    <link href="$base$/bootstrap4/css/bootstrap.min.css" rel="stylesheet" media="screen, projection" type="text/css" />
+    <link href="$base$/fonts-font-awesome/css/font-awesome.css" rel="stylesheet" media="screen, projection" type="text/css" />
+    <link href="$base$/fonts-font-awesome/css/solid.css" rel="stylesheet" media="screen, projection" type="text/css" />  <!-- FIXME -->
     <link href="$base$/css/custom.css" rel="stylesheet" media="screen, projection" type="text/css" />
     <link href="$base$/css/print.css" rel="stylesheet" media="print" type= "text/css" />
-    <script type="text/javascript" src="$base$/js/jquery.min.js"></script>
-    <script type="text/javascript" src="$base$/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="$base$/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="$base$/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="$base$/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="$base$/bootstrap4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="$base$/js/navbar.js"></script>
     <script type="text/javascript" src="$base$/js/sidebar.js"></script>
     <script type="text/javascript" src="$base$/js/content.js"></script>

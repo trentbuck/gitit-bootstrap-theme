@@ -1,0 +1,48 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ gitit-bootstrap-theme (0.1.0-1) bullseye; urgency=medium
+ .
+   * Initial Debianization.
+Author: Trent W. Buck <trentbuck@gmail.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2022-09-09
+
+--- gitit-bootstrap-theme-0.1.0.orig/src/templates/page.st
++++ gitit-bootstrap-theme-0.1.0/src/templates/page.st
+@@ -12,14 +12,14 @@
+     $if(printable)$
+     <link href="$base$/css/print.css" rel="stylesheet" media="all" type= "text/css" />
+     $else$
+-    <link href="$base$/css/bootstrap.min.css" rel="stylesheet" media="screen, projection" type="text/css" />
+-    <link href="$base$/css/fontawesome.css" rel="stylesheet" media="screen, projection" type="text/css" />
+-    <link href="$base$/css/solid.css" rel="stylesheet" media="screen, projection" type="text/css" />
++    <link href="$base$/bootstrap4/css/bootstrap.min.css" rel="stylesheet" media="screen, projection" type="text/css" />
++    <link href="$base$/fonts-font-awesome/css/font-awesome.css" rel="stylesheet" media="screen, projection" type="text/css" />
++    <link href="$base$/fonts-font-awesome/css/solid.css" rel="stylesheet" media="screen, projection" type="text/css" />  <!-- FIXME -->
+     <link href="$base$/css/custom.css" rel="stylesheet" media="screen, projection" type="text/css" />
+     <link href="$base$/css/print.css" rel="stylesheet" media="print" type= "text/css" />
+-    <script type="text/javascript" src="$base$/js/jquery.min.js"></script>
+-    <script type="text/javascript" src="$base$/js/jquery-ui.min.js"></script>
+-    <script type="text/javascript" src="$base$/js/bootstrap.min.js"></script>
++    <script type="text/javascript" src="$base$/jquery/jquery.min.js"></script>
++    <script type="text/javascript" src="$base$/jquery-ui/jquery-ui.min.js"></script>
++    <script type="text/javascript" src="$base$/bootstrap4/js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="$base$/js/navbar.js"></script>
+     <script type="text/javascript" src="$base$/js/sidebar.js"></script>
+     <script type="text/javascript" src="$base$/js/content.js"></script>
