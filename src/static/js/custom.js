@@ -7,6 +7,6 @@ $(document).ready(function() {
     .filter(function() {
       return this.hostname && this.hostname !== location.hostname
     })
-    .append('<i class="external-link fa fa-external-link small"></i>')
+    .append('<i class="external-link fa fa-external-link-alt small"></i>')
 
 })

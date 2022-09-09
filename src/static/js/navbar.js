@@ -16,13 +16,13 @@ $(document).ready(function() {
                 .each(function() {
                     switch ($(this).text()) {
                         case 'diff':
-                            $(this).prepend('<i class="fa fa-exchange fa-fw mr-2"></i>');
+                            $(this).prepend('<i class="fa fa-exchange-alt fa-fw mr-2"></i>');
                             break;
                         case 'view':
-                            $(this).prepend('<i class="fa fa-newspaper-o fa-fw mr-2"></i>');
+                            $(this).prepend('<i class="fa fa-glasses fa-fw mr-2"></i>');
                             break;
                         case 'page':
-                            $(this).prepend('<i class="fa fa-newspaper-o fa-fw mr-2"></i>');
+                            $(this).prepend('<i class="fa fa-glasses fa-fw mr-2"></i>');
                             break;
                         case 'edit':
                             $(this).prepend('<i class="fa fa-edit fa-fw mr-2"></i>');
