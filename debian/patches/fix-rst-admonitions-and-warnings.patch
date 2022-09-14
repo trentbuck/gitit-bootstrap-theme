@@ -1,0 +1,146 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ gitit-bootstrap-theme (0.1.0-1) bullseye; urgency=medium
+ .
+   * Initial Debianization.
+Author: Trent W. Buck <trentbuck@gmail.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2022-09-14
+
+--- gitit-bootstrap-theme-0.1.0.orig/src/static/css/screen.css
++++ gitit-bootstrap-theme-0.1.0/src/static/css/screen.css
+@@ -55,3 +55,118 @@
+     max-width: 12.5rem;
+   }
+ }
++
++
++/*
++Stolen from here:
++https://sphinx-rtd-theme.readthedocs.io/en/stable/demo/demo.html
++*/
++div.note > div.title > p ::before {
++ content:"";
++ font-family:ForkAwesome;
++}
++
++.admonition,
++.admonition-todo,
++.attention,
++.caution,
++.danger,
++.error,
++.hint,
++.important,
++.note,
++.seealso,
++.tip,
++.warning {
++ padding:12px;
++ line-height:24px;
++ margin-bottom:24px;
++ background:#e7f2fa
++}
++.admonition > .title,
++.admonition-todo > .title,
++.attention > .title,
++.caution > .title,
++.danger > .title,
++.error > .title,
++.hint > .title,
++.important > .title,
++.note > .title,
++.seealso > .title,
++.tip > .title,
++.warning > .title {
++ font-weight:700;
++ display:block;
++ color:#fff;
++ background:#6ab0de;
++ padding:6px 12px;
++ margin:-12px -12px 12px;
++}
++.admonition > .title > p::before,
++.admonition-todo > .title > p::before,
++.attention > .title > p::before,
++.caution > .title > p::before,
++.danger > .title > p::before,
++.error > .title > p::before,
++.hint > .title > p::before,
++.important > .title > p::before,
++.note > .title > p::before,
++.seealso > .title > p::before,
++.tip > .title > p::before,
++.warning > .title > p::before {
++ font:normal normal normal 14px/1 ForkAwesome;
++ margin-right:4px;
++ content:"";
++}
++.danger,
++.error {
++ background:#fdf3f2
++}
++.danger .title,
++.error .title {
++ background:#f29f97
++}
++.admonition-todo,
++.attention,
++.caution,
++.warning {
++ background:#ffedcc
++}
++.admonition-todo .title,
++.attention .title,
++.caution .title,
++.warning .title {
++ background:#f0b37e
++}
++.note,
++.seealso {
++ background:#e7f2fa
++}
++.note .title,
++.seealso .title {
++ background:#6ab0de
++}
++.hint,
++.important,
++.tip {
++ background:#dbfaf4
++}
++.hint .title,
++.important .title,
++.tip .title {
++ background:#1abc9c
++}
++.admonition-todo p:last-child,
++.admonition p:last-child,
++.attention p:last-child,
++.caution p:last-child,
++.danger p:last-child,
++.error p:last-child,
++.hint p:last-child,
++.important p:last-child,
++.note p:last-child,
++.seealso p:last-child,
++.tip p:last-child,
++.warning p:last-child {
++ margin-bottom:0
++}
