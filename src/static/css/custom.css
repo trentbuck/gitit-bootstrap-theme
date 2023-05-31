@@ -99,6 +99,7 @@ body,
 #content td,
 #content th {
   padding: 0.125rem 0.25rem;
+  border: 1px solid;
 }
 
 /* Table of contents */
