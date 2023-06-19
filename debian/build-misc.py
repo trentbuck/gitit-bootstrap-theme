@@ -47,21 +47,20 @@ with tempfile.TemporaryDirectory() as td:
          f'--customize-hook=sync-in {args.package_path} /X/Y',
          *(['--include=devscripts,ca-certificates',  # install uscan
             '--include= ' + ('subversion' if 'mode=svn' in watch_path.read_text() else ' '),
-            '--customize-hook=chroot $1 sh -c "'
-            '   cd /X/Y &&'
-            '   uscan --download-current-version &&'
-            '   tar --strip-components=1 -xf ../*orig.tar.*"',
+            '--customize-hook=chroot $1 env --chdir=/X/Y uscan --download-current-version',
+            '--customize-hook=chroot $1 env --chdir=/X/Y sh -c "tar --strip-components=1 -xf ../*orig.tar.*"',
             ]
            if watch_path.exists() else []),
          '--include=devscripts,lintian',
-         '--customize-hook=chroot $1 sh -c "cd /X/Y && apt-get build-dep -y ./ && HOME=/root debuild -uc -us"',
+         '--customize-hook=chroot $1 env --chdir=/X/Y apt-get build-dep -y ./',
+         '--customize-hook=chroot $1 env --chdir=/X/Y HOME=/root debuild -uc -us',
          '--customize-hook=rm -rf $1/X/Y',
          f'--customize-hook=sync-out /X {td}',
-         'bullseye',
+         'bookworm',
          '/dev/null'])
     # debsign here?
     subprocess.check_call([
         'rsync', '-ai', '--info=progress2', '--protect-args',
         '--no-group',       # allow remote sgid dirs to do their thing
         f'{td}/',     # trailing suffix forces correct rsync semantics
-        f'apt.cyber.com.au:/srv/apt/cyber/pool/bullseye/main/{package_name}-{package_version}/'])
+        f'apt.cyber.com.au:/srv/apt/cyber/pool/bookworm/main/{package_name}-{package_version}/'])

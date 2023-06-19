@@ -1,3 +1,9 @@
+gitit-bootstrap-theme (0.1.0-3) bookworm; urgency=medium
+
+  * bump for bookworm
+
+ -- Trent W. Buck <trentbuck@gmail.com>  Mon, 19 Jun 2023 17:23:35 +1000
+
 gitit-bootstrap-theme (0.1.0-2) UNRELEASED; urgency=medium
 
   * bare minimum to make warnings visible and scary
