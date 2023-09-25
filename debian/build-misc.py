@@ -11,6 +11,12 @@ parser = argparse.ArgumentParser(
     description=__doc__,
     formatter_class=argparse.RawDescriptionHelpFormatter)
 parser.add_argument(
+    '--upload-to',
+    nargs='+',
+    metavar='HOST:PATH',
+    type=str,  # FIXME: Worth creating our own type for an re like '((user@)?host.fqdn:)?path' ?
+    default=['apt.cyber.com.au:/srv/apt/cyber/pool/bookworm/main/'])
+parser.add_argument(
     'package_path',
     nargs='?',
     type=pathlib.Path,
@@ -59,8 +65,9 @@ with tempfile.TemporaryDirectory() as td:
          'bookworm',
          '/dev/null'])
     # debsign here?
-    subprocess.check_call([
-        'rsync', '-ai', '--info=progress2', '--protect-args',
-        '--no-group',       # allow remote sgid dirs to do their thing
-        f'{td}/',     # trailing suffix forces correct rsync semantics
-        f'apt.cyber.com.au:/srv/apt/cyber/pool/bookworm/main/{package_name}-{package_version}/'])
+    for remote_path in args.upload_to:
+        subprocess.check_call([
+            'rsync', '-ai', '--info=progress2', '--protect-args',
+            '--no-group',       # allow remote sgid dirs to do their thing
+            f'{td}/',     # trailing suffix forces correct rsync semantics
+            f'{remote_path}/{package_name}-{package_version}/'])
