@@ -110,3 +110,26 @@ body,
 #previewpane #TOC {
   display: none;
 }
+
+/* Table zebra striping */
+/* Ron was getting annoyed trying to identify rows/columns of long wide tables. *
+ * Ron's request was to add cell borders, twb & mike both think zebra-striping looks better. */
+/* Give the header all the borders, so it continues to stand out nicely */
+#content th {border: 1px solid}
+/* Separate each column with a border line */
+#content td:not(:first-child) {border-left: 1px solid}
+/* Make sure the whole table is boxed in so the inner borders don't just, stop */
+#content table {border: 1px solid}
+/* Ron pointed out Zebra striping when printing would use more toner, so let's behave a little differently when printing. */
+@media screen {
+    /* The actual zebra stripe part, making every 2nd row a little bit grey */
+    /* FIXME: Gitit has an 'even' class, should that be used instead of `nth-child()`? */
+    #content tr:nth-child(even) {background-color: lightgrey}
+}
+/* Ron's not too concerned about the toner, so don't need to worry about border using more toner.
+/* It did trigger Mike's concern about printer quality making the greyer lines unreadable. */
+@media print {
+    #content tr {border-bottom: 1px solid}
+    /* Seems borders don't collapse by default in printing CSS */
+    #content table, tr, th, td {border-collapse: collapse}
+}
