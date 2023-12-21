@@ -1,3 +1,10 @@
+gitit-bootstrap-theme (0.1.0-4) bookworm; urgency=medium
+
+  * Improve readability of large tables
+    (Closes: https://alloc.cyber.com.au/task/task.php?taskID=35061).
+
+ -- Trent W. Buck <trentbuck@gmail.com>  Thu, 21 Dec 2023 15:29:55 +1100
+
 gitit-bootstrap-theme (0.1.0-3) bookworm; urgency=medium
 
   * bump for bookworm

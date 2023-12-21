@@ -1,0 +1,41 @@
+Description: style tabular data for readability
+ Tables had no borders or zebra striping.
+ This made very wide tables hard to read.
+ Added zebra striping to help with wide tables (the original issue).
+ Added borders to deal with exact-fit adjacent cells "running together".
+ Forced the table heading to "stick" onscreen to help with tall tables.
+ The "sticky" option isn't great because the thead background is transparent (text-over-text).
+ If I make it opaque, though, it messes up some of the border lines.  So, just put up with it for now.
+ .
+ This is heavily based on earlier drafts by mattcen & mike:
+ https://github.com/trentbuck/gitit-bootstrap-theme/pull/2
+ https://github.com/trentbuck/gitit-bootstrap-theme/pull/3
+Author: Trent W. Buck <twb@cyber.com.au>
+Reviewed-By: Mike Abrahall <mike@cyber.com.au>
+Bug: https://alloc.cyber.com.au/task/task.php?taskID=35061
+
+--- gitit-bootstrap-theme-0.1.0.orig/src/static/css/screen.css
++++ gitit-bootstrap-theme-0.1.0/src/static/css/screen.css
+@@ -57,6 +57,22 @@
+ }
+ 
+ 
++/* Tall table QOL - keep heading onscreen */
++#content thead {
++    position: sticky;
++    top: 0;
++}
++/* Wide table QOL - zebra striping */
++#content tr.even {
++    background-color: rgba(0,0,0,0.03);
++}
++/* ??? QOL - visibly separate columns where two adjacent cells have sentences that EXACTLY fit, so they look like a single two-colun two-sentence cell. */
++#content td,
++#content th { 
++    border: thin solid rgb(0, 0, 0, 0.125);
++}
++
++
+ /*
+ Stolen from here:
+ https://sphinx-rtd-theme.readthedocs.io/en/stable/demo/demo.html
