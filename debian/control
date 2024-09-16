@@ -1,7 +1,7 @@
 Source: gitit-bootstrap-theme
 Section: web
 Priority: optional
-Homepage: https://github.com/t13a/gitit-bootstrap-theme
+Homepage: https://github.com/trentbuck/gitit-bootstrap-theme
 Standards-Version: 4.5.1
 Maintainer: Trent W. Buck <trentbuck@gmail.com>
 Rules-Requires-Root: no
